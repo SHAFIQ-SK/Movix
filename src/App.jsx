@@ -15,19 +15,24 @@ function App() {
   const { url } = useSelector((state) => state.home);
 
   useEffect(() => {
-    apiTest();
+    fetchApiConfig();
   }, []);
 
-  const apiTest = async () => {
+  const fetchApiConfig = async () => {
     // fetchDataFromApi("/movie/popular").then((res) => {
     //   console.log(res);
     // });
 
-    let res = await fetchDataFromApi("/movie/popular");
+    let res = await fetchDataFromApi("/configuration");
     const data = await res;
-    // console.log(data);
 
-    dispatch(getApiConfiguration(data));
+    const url = {
+      backdrop: data.images.secure_base_url + "original",
+      poster: data.images.secure_base_url + "original",
+      profile: data.images.secure_base_url + "original",
+    };
+
+    dispatch(getApiConfiguration(url));
   };
   return (
     <BrowserRouter>
