@@ -1,16 +1,18 @@
+import React from "react";
+
 import "./style.scss";
-import Homebanner from "./homeBanner/Homebanner";
+import HeroBanner from "./homeBanner/Homebanner";
 import Trending from "./trending/Trending";
-// import Footer from "../../components/footer/Footer";
+import Popular from "./popular/Popular";
+import TopRated from "./topRated/TopRated";
 
 const Home = () => {
   return (
     <div className="homePage">
-      {" "}
-      <Homebanner />
+      <HeroBanner />
       <Trending />
-      <div style={{ height: 1000 }}>asds</div>
-      {/* <Footer /> */}
+      <Popular />
+      <TopRated />
     </div>
   );
 };
