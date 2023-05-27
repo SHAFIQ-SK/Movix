@@ -26,6 +26,9 @@ const Homebanner = () => {
     if (event.key === "Enter" && query.length > 0) {
       navigate(`/search/${query}`);
     }
+    if (event.type === "click" && query.length > 0) {
+      navigate(`/search/${query}`);
+    }
   };
 
   return (
